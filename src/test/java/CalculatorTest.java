@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.*;
-//@FixMethodOrder(MethodSorters.NAME_ASCENDING);
+
 
 class CalculatorTest {
 
@@ -47,6 +47,6 @@ class CalculatorTest {
         System.out.println("Test is finished. ");
     }
 
-
+// De här är kvar
 //@ParameterizedTest ---  testa en array’s storlek ---- ordningen på hur tester körs ---  en metod ska vara private
 }
