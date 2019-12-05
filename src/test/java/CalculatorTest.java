@@ -48,5 +48,5 @@ class CalculatorTest {
     }
 
 
-
+//@ParameterizedTest ---  testa en array’s storlek ---- ordningen på hur tester körs ---  en metod ska vara private
 }

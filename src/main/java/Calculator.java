@@ -11,12 +11,9 @@ public class Calculator {
         return x-y;
     }
 
-    int multiplikation(int x, int y){
+    public int multiplikation(int x, int y){
         return x*y;
     }
 
-    public double division (int x, int y){
-
-        return x/y;
-    }
+    public double division (int x, int y){ return x/y;   }
 }
