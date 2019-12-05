@@ -30,10 +30,12 @@ class CalculatorTest {
         Assertions.assertEquals(50,calculator.multiplikation(5,10));
     }
 
-    @Test
 
+    //@Test(expected = ArithmeticException.class) eller ska jag skriva så
+    @Test
     void testDivision( ) {
         Assertions.assertThrows(ArithmeticException.class, ()-> calculator.division(50,0),"Error: divid by Zero" );
+
 
 
     }
