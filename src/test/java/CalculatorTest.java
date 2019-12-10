@@ -47,6 +47,13 @@ class CalculatorTest {
         System.out.println("Test is finished. ");
     }
 
+
+    @Test
+    void testingArraySize(){
+        int [] Array_ny = {2,4,6,8};
+        Assertions.assertArrayEquals(Array_ny, calculator.getCalArray());
+    }
+
 // De här är kvar
-//@ParameterizedTest ---  testa en array’s storlek ---- ordningen på hur tester körs ---  en metod ska vara private
+//@ParameterizedTest ---  ---- ordningen på hur tester körs ---  en metod ska vara private
 }
