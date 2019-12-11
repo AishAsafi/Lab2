@@ -1,4 +1,8 @@
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 class CalculatorTest {
@@ -14,37 +18,45 @@ class CalculatorTest {
 
 
     @Test
+    @Order(1)
     @DisplayName("Testing add method ")
-    void testAddition() {
-        Assertions.assertEquals(40,calculator.addition(15,25));
+        void testAddition() {
+        Assertions.assertEquals(40,calculator.addition(10,30));
     }
 
     @Test
+    @Order(2)
     @DisplayName("Testing subtraction method ")
     void testSubtraktion() {
         Assertions.assertEquals(10,calculator.subtraktion(25,15));
     }
 
     @Test
+    @Order(3)
+    @DisplayName("Testing multiplikation method ")
     void testMultiplikation() {
         Assertions.assertEquals(50,calculator.multiplikation(5,10));
     }
 
 
-    //@Test(expected = ArithmeticException.class) eller ska jag skriva så
     @Test
     void testDivision( ) {
-        Assertions.assertThrows(ArithmeticException.class, ()-> calculator.division(50,0),"Error: divid by Zero" );
-
-
-
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            calculator.division(4.0, 0.0);
+        }, "Error :Division by 0 ");
     }
 
 
-    @AfterEach
-    public void afterMethod(){
+    @Test
+    @DisplayName("Testing private method")
+    void testingPrivateMethod(){
+        Assertions.assertEquals(90, calculator.callPrivateMethod(20,70));
+    }
 
-        System.out.println("Test is finished. ");
+    @ParameterizedTest
+    @ValueSource(ints = {2,4,6,8,10})
+    void isEvenReturnTrue(int a) {
+        assertTrue(calculator.isEven(a));
     }
 
 
@@ -54,6 +66,11 @@ class CalculatorTest {
         Assertions.assertArrayEquals(Array_ny, calculator.getCalArray());
     }
 
-// De här är kvar
-//@ParameterizedTest ---  ---- ordningen på hur tester körs ---  en metod ska vara private
+    @AfterEach
+    public void afterMethod(){
+
+        System.out.println("Test is finished. ");
+    }
+
+
 }
