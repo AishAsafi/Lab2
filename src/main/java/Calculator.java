@@ -25,16 +25,16 @@ public class Calculator {
 
 
 
-    private int privateAdditionMethod(int a, int b){
-        return a+b;
+    private int privateAdditionMethod(int x, int y){
+        return x+y;
     }
 
-    public int callPrivateMethod(int a, int b){
-        return this.privateAdditionMethod(a , b);
+    public int callPrivateMethod(int x, int y){
+        return this.privateAdditionMethod(x , y);
     }
 
-    public static boolean isEven(int a) {
-        return a % 2 == 0;
+    public static boolean isEven(int x) {
+        return x % 2 == 0;
     }
     public int[] getCalArray() {
         return CalArray;

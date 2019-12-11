@@ -20,7 +20,7 @@ class CalculatorTest {
     @Order(1)
     @DisplayName("Testing add method ")
         void testAddition() {
-        Assertions.assertEquals(40,calculator.addition(10,30));
+        Assertions.assertEquals(40,calculator.addition(20,20));
     }
 
     @Test
